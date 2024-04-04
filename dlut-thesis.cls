@@ -15,6 +15,7 @@
 \RequirePackage[version=4]{mhchem}
 \RequirePackage{siunitx}
 \RequirePackage{pdfpages}
+\RequirePackage{notoccite}
 \RequirePackage{ifthen}
 \RequirePackage{ifpdf}
 
