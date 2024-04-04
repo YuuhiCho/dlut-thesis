@@ -290,21 +290,21 @@
 \RequirePackage{titletoc}
 \titlecontents{chapter}[0pt]{\songti\zihao{-4}}
 {\thecontentslabel\hspace{0.4\ccwd}}{}
-{\hspace{0em}\titlerule*{.}\contentspage}
+{\hspace{0.4em}\titlerule*{.}\contentspage}
 \titlecontents{section}[2\ccwd]{\songti\zihao{-4}}
 {\thecontentslabel\hspace{0.4\ccwd}}{}
-{\hspace{0em}\titlerule*{.}\contentspage}
+{\hspace{0.4em}\titlerule*{.}\contentspage}
 \titlecontents{subsection}[4\ccwd]{\songti\zihao{-4}}
 {\thecontentslabel\hspace{0.5\ccwd}}{}
-{\hspace{0em}\titlerule*{.}\contentspage}
+{\hspace{0.4em}\titlerule*{.}\contentspage}
 
 \titlecontents{figure}[0pt]{\songti\zihao{-4}}
 {\figurename\thecontentslabel~~}{\hspace*{-1.5cm}}
-{\hspace{0em}\titlerule*{.}\hspace{-0.5em}\contentspage}
+{\hspace{0.4em}\titlerule*{.}\hspace{0em}\contentspage}
 
 \titlecontents{table}[0pt]{\songti\zihao{-4}}
 {\tablename\thecontentslabel~~}{\hspace*{-1.5cm}}
-{\hspace{0em}\titlerule*{.}\hspace{-0.5em}\contentspage}
+{\hspace{0.4em}\titlerule*{.}\hspace{0em}\contentspage}
 
 % table of contents in Chinese
 \renewcommand\tableofcontents{%
@@ -316,8 +316,7 @@
 	\chapter*{\contentsname}
 	\addcontentsline{toc}{chapter}{目录}
 	\@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
-	\pdfbookmark[0]{目录}{bittoc}
-	\@starttoc{toc}%
+	\@starttoc{toc}
 	\if@restonecol\twocolumn\fi
 }
 
@@ -329,7 +328,7 @@
 	\chapter*{\engcontentsname
 		\@mkboth{\engcontentsname}{\engcontentsname}}
 	\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
-	\@starttoc{toe}%
+	\@starttoc{toe}
 	\if@restonecol\twocolumn\fi
 }
 
