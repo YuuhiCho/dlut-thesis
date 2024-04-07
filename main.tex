@@ -1,9 +1,9 @@
-\documentclass[twoside, master, hide]{dlut-thesis}
+\documentclass[twoside, adobe]{dlut-thesis}
 
 
 \begin{document}
 %-----------------------------------------------------------------------------------------------------------------------
-\include{data/cover}
+\include{data/info}
 \maketitle
 
 
@@ -18,20 +18,15 @@
 
 
 %-----------------------------------------------------------------------------------------------------------------------
-\tableofcontents
+\mktoc
+\mktoe
 
-
-%-----------------------------------------------------------------------------------------------------------------------
-\tableofengcontents
-
-
-%-----------------------------------------------------------------------------------------------------------------------
 \let\origaddvspace\addvspace
 \renewcommand{\addvspace}[1]{}
-\addcontentsline{toc}{chapter}{图目录}
 \listoffigures
-\addcontentsline{toc}{chapter}{表目录}
+\addcontentsline{toc}{chapter}{图目录}
 \listoftables
+\addcontentsline{toc}{chapter}{表目录}
 \renewcommand{\addvspace}[1]{\origaddvspace{#1}}
 
 
@@ -57,9 +52,8 @@
 
 %-----------------------------------------------------------------------------------------------------------------------
 \backmatter
-
-\include{data/publication}
-\include{data/acknowledgement}
+\include{data/achievements}
+\include{data/acknowledgements}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
