@@ -176,11 +176,11 @@
 \RequirePackage[%
 	paper=a4paper,%
 	top=3.5cm,%
-	bottom=2.5cm,%
-	left=2.7cm,%
-	right=2.7cm,%
-	headheight=0.50cm,%
-	footskip=1.47cm%
+	bottom=3.87cm,%
+	left=2.5cm,%
+	right=2.5cm,%
+	headheight=0.54cm,%
+	footskip=1.77cm%
 ]{geometry}
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
