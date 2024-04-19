@@ -37,7 +37,7 @@
 % Font settings
 \ProcessOptions\relax
 \ifdlut@adobe
-	\setCJKmainfont[Path="fonts/adobe/"]{AdobeSongStd-Light.otf}
+	\setCJKmainfont[AutoFakeBold=true, Path="fonts/adobe/"]{AdobeSongStd-Light.otf}
 	\newCJKfontfamily{\songti}   [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeSongStd-Light.otf}
 	\newCJKfontfamily{\heiti}    [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeHeitiStd-Regular.otf}
 	\newCJKfontfamily{\kaishu}   [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeKaitiStd-Regular.otf}
@@ -45,7 +45,7 @@
 	\newCJKfontfamily{\xingkai}  [AutoFakeBold=true, Path="fonts/windows/"] {STXingKai.ttf}
 	\newCJKfontfamily{\xihei}    [AutoFakeBold=true, Path="fonts/windows/"] {STXiHei.ttf}
 \else
-	\setCJKmainfont[Path="fonts/windows/"]{SimSun.ttc}
+	\setCJKmainfont[AutoFakeBold=true, Path="fonts/windows/"]{SimSun.ttc}
 	\newCJKfontfamily{\songti}   [AutoFakeBold=true, Path="fonts/windows/"] {SimSun.ttc}
 	\newCJKfontfamily{\heiti}    [AutoFakeBold=true, Path="fonts/windows/"] {SimHei.ttf}
 	\newCJKfontfamily{\kaishu}   [AutoFakeBold=true, Path="fonts/windows/"] {SimKai.ttf}
