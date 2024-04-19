@@ -16,7 +16,6 @@
 \RequirePackage{siunitx}
 \RequirePackage{pdfpages}
 \RequirePackage{notoccite}
-\RequirePackage{tikz}
 \RequirePackage{ifthen}
 \RequirePackage{ifpdf}
 
@@ -28,38 +27,39 @@
 
 \ProcessOptions\relax
 \ifdlut@istwoside
-	\LoadClass[zihao=-4,a4paper,twoside,openright,UTF8,space=auto,fontset=none]{ctexbook}
+    \LoadClass[zihao=-4,a4paper,twoside,openright,UTF8,space=auto,fontset=none]{ctexbook}
 \else
-	\LoadClass[zihao=-4,a4paper,oneside,openany,UTF8,space=auto,fontset=none]{ctexbook}
+    \LoadClass[zihao=-4,a4paper,oneside,openany,UTF8,space=auto,fontset=none]{ctexbook}
 \fi
 
+\setlength{\parskip}{0pt}
 
 %-----------------------------------------------------------------------------------------------------------------------
 % Font settings
 \ProcessOptions\relax
 \ifdlut@adobe
-	\setCJKmainfont[AutoFakeBold=true, Path="fonts/adobe/"]{AdobeSongStd-Light.otf}
-	\newCJKfontfamily{\songti}   [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeSongStd-Light.otf}
-	\newCJKfontfamily{\heiti}    [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeHeitiStd-Regular.otf}
-	\newCJKfontfamily{\kaishu}   [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeKaitiStd-Regular.otf}
-	\newCJKfontfamily{\fangsong} [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeFangsongStd-Regular.otf}
-	\newCJKfontfamily{\xingkai}  [AutoFakeBold=true, Path="fonts/windows/"] {STXingKai.ttf}
-	\newCJKfontfamily{\xihei}    [AutoFakeBold=true, Path="fonts/windows/"] {STXiHei.ttf}
+    \setCJKmainfont[AutoFakeBold=true, Path="fonts/adobe/"]{AdobeSongStd-Light.otf}
+    \newCJKfontfamily{\songti}   [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeSongStd-Light.otf}
+    \newCJKfontfamily{\heiti}    [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeHeitiStd-Regular.otf}
+    \newCJKfontfamily{\kaishu}   [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeKaitiStd-Regular.otf}
+    \newCJKfontfamily{\fangsong} [AutoFakeBold=true, Path="fonts/adobe/"] {AdobeFangsongStd-Regular.otf}
+    \newCJKfontfamily{\xingkai}  [AutoFakeBold=true, Path="fonts/windows/"] {STXingKai.ttf}
+    \newCJKfontfamily{\xihei}    [AutoFakeBold=true, Path="fonts/windows/"] {STXiHei.ttf}
 \else
-	\setCJKmainfont[AutoFakeBold=true, Path="fonts/windows/"]{SimSun.ttc}
-	\newCJKfontfamily{\songti}   [AutoFakeBold=true, Path="fonts/windows/"] {SimSun.ttc}
-	\newCJKfontfamily{\heiti}    [AutoFakeBold=true, Path="fonts/windows/"] {SimHei.ttf}
-	\newCJKfontfamily{\kaishu}   [AutoFakeBold=true, Path="fonts/windows/"] {SimKai.ttf}
-	\newCJKfontfamily{\fangsong} [AutoFakeBold=true, Path="fonts/windows/"] {SimFang.ttf}
-	\newCJKfontfamily{\xingkai}  [AutoFakeBold=true, Path="fonts/windows/"] {STXingKai.ttf}
-	\newCJKfontfamily{\xihei}    [AutoFakeBold=true, Path="fonts/windows/"] {STXiHei.ttf}
+    \setCJKmainfont[AutoFakeBold=true, Path="fonts/windows/"]{SimSun.ttc}
+    \newCJKfontfamily{\songti}   [AutoFakeBold=true, Path="fonts/windows/"] {SimSun.ttc}
+    \newCJKfontfamily{\heiti}    [AutoFakeBold=true, Path="fonts/windows/"] {SimHei.ttf}
+    \newCJKfontfamily{\kaishu}   [AutoFakeBold=true, Path="fonts/windows/"] {SimKai.ttf}
+    \newCJKfontfamily{\fangsong} [AutoFakeBold=true, Path="fonts/windows/"] {SimFang.ttf}
+    \newCJKfontfamily{\xingkai}  [AutoFakeBold=true, Path="fonts/windows/"] {STXingKai.ttf}
+    \newCJKfontfamily{\xihei}    [AutoFakeBold=true, Path="fonts/windows/"] {STXiHei.ttf}
 \fi
 
 \setmainfont[
-	Path="fonts/windows/",
-	BoldFont={timesbd.ttf},
-	ItalicFont={timesi.ttf},
-	BoldItalicFont={timesbi.ttf},
+    Path="fonts/windows/",
+    BoldFont={timesbd.ttf},
+    ItalicFont={timesi.ttf},
+    BoldItalicFont={timesbi.ttf},
 ]{times.ttf}
 
 
@@ -175,18 +175,19 @@
 %-----------------------------------------------------------------------------------------------------------------------
 % Page Layout
 \RequirePackage[%
-	paper=a4paper,%
-	top=3.5cm,%
-	bottom=3.87cm,%
-	left=2.5cm,%
-	right=2.5cm,%
-	headheight=0.54cm,%
-	footskip=1.77cm%
+    paper=a4paper,
+    top=4.1cm,
+    bottom=3.5cm,
+    left=2.5cm,
+    right=2.5cm,
+    headsep=1.2cm,
+    headheight=0.5cm,
+    footskip=1.45cm,
 ]{geometry}
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-	\thispagestyle{empty}%
-	\hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+    \thispagestyle{empty}%
+    \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
 \RequirePackage{setspace}
 \setstretch{1.35}
@@ -194,47 +195,36 @@
 
 %-----------------------------------------------------------------------------------------------------------------------
 % Title style
-\RequirePackage{titlesec}
-
-% chapter style
-\ctexset{chapter={
-			name = {},
-			number = {\arabic{chapter}},
-			format = { \CTEXifname{\raggedright\heiti\zihao{3}}{\centering\heiti\zihao{-3}\textbf}},,
-			pagestyle = {dlut@headings},
-			beforeskip = 12bp,
-			afterskip = 28bp,
-			fixskip = true,
-		}
-}
-
-% section style
-\ctexset{section={
-			format = {\heiti\zihao{4}},
-			beforeskip = 12bp ,
-			afterskip = 8bp ,
-			fixskip = true,
-		}
-}
-
-% subsection style
-\ctexset{subsection={
-			format = {\raggedright\heiti\zihao{-4}},
-			beforeskip = 8bp,
-			afterskip = 6bp,
-			fixskip = true,
-		}
-}
-
-% subsubsection style
-\ctexset{subsubsection={
-			name = {(,)},
-			number = {\arabic{subsubsection}},
-			format = {\raggedright\heiti\zihao{-4}},
-			beforeskip =8bp,
-			afterskip = 6bp,
-			fixskip = true,
-		}
+\ctexset{%
+    chapter={
+        name = {},
+        number = {\arabic{chapter}},
+        format = { \CTEXifname{\raggedright\heiti\zihao{3}}{\centering\heiti\zihao{-3}\textbf}},,
+        pagestyle = {dlut@headings},
+        beforeskip = 4bp,
+        afterskip = 26bp,
+        fixskip = true,
+    },
+    section={
+        format = {\heiti\zihao{4}},
+        beforeskip = 14bp,
+        afterskip = 14bp,
+        fixskip = true,
+    },
+    subsection={
+        format = {\raggedright\heiti\zihao{-4}},
+        beforeskip = 13bp,
+        afterskip = 13bp,
+        fixskip = true,
+    },
+    subsubsection={
+        name = {(,)},
+        number = {\arabic{subsubsection}},
+        format = {\raggedright\heiti\zihao{-4}},
+        beforeskip = 6bp,
+        afterskip = 6bp,
+        fixskip = true,
+    }%
 }
 
 
@@ -271,32 +261,32 @@
 
 % Table of contents in Chinese
 \newcommand\mktoc{
-	\if@twocolumn
-		\@restonecoltrue\onecolumn
-	\else
-		\@restonecolfalse
-	\fi
-	\chapter*{\dlut@label@zh@toc}
-	\addcontentsline{toc}{chapter}{\dlut@label@zh@toc}
-	\@starttoc{toc}
-	\if@restonecol
-		\twocolumn
-	\fi
+    \if@twocolumn
+        \@restonecoltrue\onecolumn
+    \else
+        \@restonecolfalse
+    \fi
+    \chapter*{\dlut@label@zh@toc}
+    \addcontentsline{toc}{chapter}{\dlut@label@zh@toc}
+    \@starttoc{toc}
+    \if@restonecol
+        \twocolumn
+    \fi
 }
 
 % Table of contents in English
 \newcommand\mktoe{
-	\if@twocolumn
-		\@restonecoltrue\onecolumn
-	\else
-		\@restonecolfalse
-	\fi
-	\chapter*{\dlut@label@en@toc}
-	\addcontentsline{toc}{chapter}{\dlut@label@en@toc}
-	\@starttoc{toe}
-	\if@restonecol
-		\twocolumn
-	\fi
+    \if@twocolumn
+        \@restonecoltrue\onecolumn
+    \else
+        \@restonecolfalse
+    \fi
+    \chapter*{\dlut@label@en@toc}
+    \addcontentsline{toc}{chapter}{\dlut@label@en@toc}
+    \@starttoc{toe}
+    \if@restonecol
+        \twocolumn
+    \fi
 }
 
 \renewcommand\listfigurename{\dlut@label@zh@listfigurename}
@@ -307,7 +297,7 @@
 % denotation
 \newenvironment{denotation}
 {\chapter*{\dlut@label@zh@listdenotationname}
-	\addcontentsline{toc}{chapter}{\dlut@label@zh@listdenotationname}}
+    \addcontentsline{toc}{chapter}{\dlut@label@zh@listdenotationname}}
 {}
 
 
@@ -315,17 +305,17 @@
 % new commands for chapter, section, subsection
 \newcommand{\bichapter}[2]
 {   \chapter{#1}
-	\addcontentsline{toe}{chapter}{\protect\numberline{\csname thechapter\endcsname}#2}
+    \addcontentsline{toe}{chapter}{\protect\numberline{\csname thechapter\endcsname}#2}
 }
 
 \newcommand{\bisection}[2]
 {   \section{#1}
-	\addcontentsline{toe}{section}{\protect\numberline{\csname thesection\endcsname}#2}
+    \addcontentsline{toe}{section}{\protect\numberline{\csname thesection\endcsname}#2}
 }
 
 \newcommand{\bisubsection}[2]
 {   \subsection{#1}
-	\addcontentsline{toe}{subsection}{\protect\numberline{\csname thesubsection\endcsname}#2}
+    \addcontentsline{toe}{subsection}{\protect\numberline{\csname thesubsection\endcsname}#2}
 }
 
 
@@ -335,29 +325,29 @@
 \fancypagestyle{dlut@empty}{\fancyhf{}}
 
 \fancypagestyle{dlut@headings}{%
-	\fancyhf{}
-	\fancyfoot[C]{\songti\zihao{5}{$-$~\thepage~$-$}}
-	\fancyhead[CO]{\zihao{5}{\songti\dlut@label@zh@thesistypetitle}}
-	\fancyhead[CE]{\zihao{5}{\songti\dlut@value@zh@title}}
+    \fancyhf{}
+    \fancyfoot[C]{\songti\zihao{-5}{$-$~\thepage~$-$}}
+    \fancyhead[CO]{\zihao{5}{\songti\dlut@label@zh@thesistypetitle}}
+    \fancyhead[CE]{\zihao{5}{\songti\dlut@value@zh@title}}
 }
 
 \let\dlut@cleardoublepage\cleardoublepage
 \newcommand{\dlut@clearemptydoublepage}{%
-	\clearpage{\pagestyle{dlut@empty}\dlut@cleardoublepage}}
+    \clearpage{\pagestyle{dlut@empty}\dlut@cleardoublepage}}
 \let\cleardoublepage\dlut@clearemptydoublepage
 
 \renewcommand{\frontmatter}{
-	\if@openright\cleardoublepage\else\clearpage\fi
-	\@mainmatterfalse
-	\pagenumbering{Roman}
-	\pagestyle{dlut@headings}
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \@mainmatterfalse
+    \pagenumbering{Roman}
+    \pagestyle{dlut@headings}
 }
 
 \renewcommand{\mainmatter}{
-	\if@openright\cleardoublepage\else\clearpage\fi
-	\@mainmattertrue
-	\pagenumbering{arabic}
-	\pagestyle{dlut@headings}
+    \if@openright\cleardoublepage\else\clearpage\fi
+    \@mainmattertrue
+    \pagenumbering{arabic}
+    \pagestyle{dlut@headings}
 }
 
 
@@ -407,20 +397,20 @@
 \DeclareCaptionLabelSeparator{zhspace}{\hspace{1\ccwd}}
 \DeclareCaptionFont{fontsize}{\songti\zihao{5}}
 \captionsetup{
-	font = {fontsize},
-	labelsep = zhspace,
+    font = {fontsize},
+    labelsep = zhspace,
 }
 \captionsetup[figure][bi-second]{name=Fig.}
 \captionsetup[table]{
-	position = top,
-	aboveskip = 6bp,
-	belowskip = 6bp,
+    position = top,
+    aboveskip = 6bp,
+    belowskip = 6bp,
 }
 \numberwithin{table}{chapter}
 \captionsetup[figure]{
-	position = bottom,
-	aboveskip = 6bp,
-	belowskip = 6bp,
+    position = bottom,
+    aboveskip = 6bp,
+    belowskip = 6bp,
 }
 \captionsetup[table][bi-second]{name=Tab.}
 
@@ -466,16 +456,16 @@
 % hyperref
 \RequirePackage{hyperref}
 \hypersetup{
-	bookmarksnumbered,
-	linktoc=all,
-	colorlinks=true,
-	citecolor=black,
-	filecolor=cyan,
-	linkcolor=black,
-	linkbordercolor=black,
-	urlcolor=black,
-	plainpages=false,
-	pdfstartview=FitH
+    bookmarksnumbered,
+    linktoc=all,
+    colorlinks=true,
+    citecolor=black,
+    filecolor=cyan,
+    linkcolor=black,
+    linkbordercolor=black,
+    urlcolor=black,
+    plainpages=false,
+    pdfstartview=FitH
 }
 
 
@@ -497,18 +487,8 @@
 % dlut space
 \newcommand{\dlutspace}[1][1]{\hspace{#1\ccwd}}
 
-\def\dlut@getfileinfo#1 #2 #3\relax#4\relax{%
-	\def\dlutfiledate{#1}%
-	\def\dlutfileversion{#2}%
-	\def\dlutfileinfo{#3}}%
-\expandafter\ifx\csname ver@dutmaster-xetex.cls\endcsname\relax
-	\edef\reserved@a{\csname ver@ctextemp_dutmaster-xetex.cls\endcsname}
-\else
-	\edef\reserved@a{\csname ver@dutmaster-xetex.cls\endcsname}
-\fi
-\expandafter\dlut@getfileinfo\reserved@a\relax? ? \relax\relax
 \def\dlut@underline[#1]#2{%
-	\underline{\hbox to #1{\hfill#2\hfill}}}
+    \underline{\hbox to #1{\hfill#2\hfill}}}
 \def\dlutunderline{\@ifnextchar[\dlut@underline\underline}
 
 
@@ -516,80 +496,80 @@
 % title page in Chinese
 \renewcommand\maketitle
 {
-	\cleardoublepage
-	\thispagestyle{empty}
-	\begin{center}
-		\vskip \stretch{1}
-		\def\tabcolsep{1pt}
-		\def\arraystretch{1.5}
-		\parbox[t][4.40cm][c]{\textwidth}
-		{
-			\begin{center}
-				{\songti\zihao{-1}\textbf{\dlut@value@zh@thesistype}\\}
-				\vspace{1.34cm}
-				{\xihei\zihao{2}\textbf{\dlut@value@zh@title}\\}
-				\vspace{0.13cm}
-				{\zihao{3}\textbf{\dlut@value@en@title}\\}
-			\end{center}
-		}
-		\vspace{50.2mm}\\
-		{\songti\zihao{-3}\dlut@key@zh@author}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@author}
-			\vskip 10pt
-		{\songti\zihao{-3}\dlut@key@zh@authorid}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@authorid}
-			\vskip 10pt
-		{\songti\zihao{-3}\dlut@key@zh@advisor}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@advisor}
-			\vskip 10pt
-		{\songti\zihao{-3}\dlut@key@zh@major}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@major}
-			\vskip 10pt
-		{\songti\zihao{-3}\dlut@key@zh@defenddate}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@defenddate}
-		\\ \vspace{31.4mm}
-		{\Large\xingkai\dlut@value@zh@schoolname\\}
-			\vspace{2.3mm}
-		{\zihao{-4}\dlut@value@en@schoolname}
-	\end{center}
-	\vskip \stretch{0.5}
-	\clearpage
-	\if@twoside
-		\thispagestyle{empty}
-		\cleardoublepage
-	\fi
+    \cleardoublepage
+    \thispagestyle{empty}
+    \begin{center}
+        \vskip \stretch{1}
+        \def\tabcolsep{1pt}
+        \def\arraystretch{1.5}
+        \parbox[t][4.40cm][c]{\textwidth}
+        {
+            \begin{center}
+                {\songti\zihao{-1}\textbf{\dlut@value@zh@thesistype}\\}
+                \vspace{1.34cm}
+                {\xihei\zihao{2}\textbf{\dlut@value@zh@title}\\}
+                \vspace{0.13cm}
+                {\zihao{3}\textbf{\dlut@value@en@title}\\}
+            \end{center}
+        }
+        \vspace{50.2mm}\\
+        {\songti\zihao{-3}\dlut@key@zh@author}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@author}
+            \vskip 10pt
+        {\songti\zihao{-3}\dlut@key@zh@authorid}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@authorid}
+            \vskip 10pt
+        {\songti\zihao{-3}\dlut@key@zh@advisor}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@advisor}
+            \vskip 10pt
+        {\songti\zihao{-3}\dlut@key@zh@major}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@major}
+            \vskip 10pt
+        {\songti\zihao{-3}\dlut@key@zh@defenddate}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@defenddate}
+        \\ \vspace{31.4mm}
+        {\Large\xingkai\dlut@value@zh@schoolname\\}
+            \vspace{2.3mm}
+        {\zihao{-4}\dlut@value@en@schoolname}
+    \end{center}
+    \vskip \stretch{0.5}
+    \clearpage
+    \if@twoside
+        \thispagestyle{empty}
+        \cleardoublepage
+    \fi
 }
 
 
 %-----------------------------------------------------------------------------------------------------------------------
 % originality statement
 \newcommand\makeDeclareOriginal{%
-	\cleardoublepage
-	\pdfbookmark[0]{声明}{statement}
-	\thispagestyle{empty}
-	\begin{center}
-		\parbox[t][1.52cm][c]{\textwidth}
-		{\heiti\zihao{-2}\centerline \dlut@label@original}
-	\end{center}
-	\vskip 10pt
-		{\songti\zihao{-4}\dlut@label@originalcontent}
-	\vskip 10pt
-		{\songti\zihao{-4}\dlut@label@originaltitle}\dlutunderline[303pt]{\dlut@value@title}
-	\vskip 3pt
-	\indent{\songti\zihao{-4}\dlut@label@authorsign} \dlutunderline[8em]{} \hspace{1.3em} {\songti\zihao{-4}\dlut@label@originalDate}\dlutunderline[4em]{}~年~\dlutunderline[2em]{}~月~\dlutunderline[2em]{}~日~
-	\vskip 20mm
-	\begin{center}
-		{\heiti\zihao{-2} \dlut@label@authorization}
-	\end{center}
-	\vskip 10pt
-		{\songti\zihao{-4} \dlut@label@authorizationcontent}
-	\vskip 25pt
-		{\songti\zihao{-4}\dlut@label@originaltitle}\dlutunderline[303pt]{\dlut@value@title}
-	\vskip 3pt
-	\indent{\songti\zihao{-4}\dlut@label@authorsign} \dlutunderline[10.65em]{} {\songti\zihao{-4}\dlut@label@originalDate}\dlutunderline[3em]{}年~\dlutunderline[2em]{}~月~\dlutunderline[2em]{}~日~
-	\vskip 3pt
-	\indent{\songti\zihao{-4}\dlut@label@Supervisorsign} \dlutunderline[10.65em]{} {\songti\zihao{-4}\dlut@label@originalDate}\dlutunderline[3em]{}~年~\dlutunderline[2em]{}~月~\dlutunderline[2em]{}~日~
-	\vskip 3pt
-	\clearpage
-	\if@twoside
-		\thispagestyle{empty}
-		\cleardoublepage
-	\fi
+    \cleardoublepage
+    \pdfbookmark[0]{声明}{statement}
+    \thispagestyle{empty}
+    \begin{center}
+        \parbox[t][1.52cm][c]{\textwidth}
+        {\heiti\zihao{-2}\centerline \dlut@label@original}
+    \end{center}
+    \vskip 10pt
+        {\songti\zihao{-4}\dlut@label@originalcontent}
+    \vskip 10pt
+        {\songti\zihao{-4}\dlut@label@originaltitle}\dlutunderline[303pt]{\dlut@value@zh@title}
+    \vskip 3pt
+    \indent{\songti\zihao{-4}\dlut@label@authorsign} \dlutunderline[8em]{} \hspace{1.3em} {\songti\zihao{-4}\dlut@label@originalDate}\dlutunderline[4em]{}~年~\dlutunderline[2em]{}~月~\dlutunderline[2em]{}~日~
+    \vskip 20mm
+    \begin{center}
+        {\heiti\zihao{-2} \dlut@label@authorization}
+    \end{center}
+    \vskip 10pt
+        {\songti\zihao{-4} \dlut@label@authorizationcontent}
+    \vskip 25pt
+        {\songti\zihao{-4}\dlut@label@originaltitle}\dlutunderline[303pt]{\dlut@value@zh@title}
+    \vskip 3pt
+    \indent{\songti\zihao{-4}\dlut@label@authorsign} \dlutunderline[10.65em]{} {\songti\zihao{-4}\dlut@label@originalDate}\dlutunderline[3em]{}年~\dlutunderline[2em]{}~月~\dlutunderline[2em]{}~日~
+    \vskip 3pt
+    \indent{\songti\zihao{-4}\dlut@label@Supervisorsign} \dlutunderline[10.65em]{} {\songti\zihao{-4}\dlut@label@originalDate}\dlutunderline[3em]{}~年~\dlutunderline[2em]{}~月~\dlutunderline[2em]{}~日~
+    \vskip 3pt
+    \clearpage
+    \if@twoside
+        \thispagestyle{empty}
+        \cleardoublepage
+    \fi
 }
 
 
@@ -597,62 +577,62 @@
 % abstract and keywords in Chinese
 \newenvironment{abstract}
 {
-	\cleardoublepage
-	\chapter{\dlut@label@zh@abstract}
+    \cleardoublepage
+    \chapter{\dlut@label@zh@abstract}
 }
 {}
 
 \newcommand\beginatevenpage{
-	\clearpage
-	\if@twoside
-		\thispagestyle{empty}
-		\cleardoublepage
-	\fi
+    \clearpage
+    \if@twoside
+        \thispagestyle{empty}
+        \cleardoublepage
+    \fi
 }
 
 \newcommand\keywords[1]{%
-	\vspace{2ex}\indent{\heiti\zihao{-4} \dlut@label@zh@keywords} #1}
+    \vspace{2ex}\indent{\heiti\zihao{-4} \dlut@label@zh@keywords} #1}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
 % abstract and keywords in English
 \newenvironment{englishabstract}
 {
-	\clearpage
-	\chapter{\dlut@label@en@abstract}
+    \clearpage
+    \chapter{\dlut@label@en@abstract}
 }
 {}
 
 \newcommand\englishkeywords[1]{%
-	\vspace{2ex}\indent{\bf\zihao{-4} \dlut@label@en@keywords} #1}
+    \vspace{2ex}\indent{\bf\zihao{-4} \dlut@label@en@keywords} #1}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
 % references
 \renewenvironment{thebibliography}[1]
 {\songti\zihao{5}
-	\chapter*{\dlut@label@zh@references}
-	\addcontentsline{toc}{chapter}{\dlut@label@zh@references}
-	\addcontentsline{toe}{chapter}{\dlut@label@en@references}
-	\list{\@biblabel{\@arabic\c@enumiv}}%
-	{\settowidth\labelwidth{\@biblabel{#1}}%
-		\leftmargin\labelwidth
-		\advance\leftmargin\labelsep
-		\setlength{\parsep}{1mm}
-		\setlength{\labelsep}{0.5em}
-		\setlength{\itemsep}{0.05pc}
-		\setlength{\listparindent}{0in}
-		\setlength{\itemindent}{0in}
-		\setlength{\rightmargin}{0in}
-		\@openbib@code
-		\usecounter{enumiv}%
-		\let\p@enumiv\@empty
-		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
-	\sloppy
-	\clubpenalty4000
-	\@clubpenalty \clubpenalty
-	\widowpenalty4000%
-	\sfcode`\.\@m
+    \chapter*{\dlut@label@zh@references}
+    \addcontentsline{toc}{chapter}{\dlut@label@zh@references}
+    \addcontentsline{toe}{chapter}{\dlut@label@en@references}
+    \list{\@biblabel{\@arabic\c@enumiv}}%
+    {\settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep
+        \setlength{\parsep}{1mm}
+        \setlength{\labelsep}{0.5em}
+        \setlength{\itemsep}{0.05pc}
+        \setlength{\listparindent}{0in}
+        \setlength{\itemindent}{0in}
+        \setlength{\rightmargin}{0in}
+        \@openbib@code
+        \usecounter{enumiv}%
+        \let\p@enumiv\@empty
+        \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy
+    \clubpenalty4000
+    \@clubpenalty \clubpenalty
+    \widowpenalty4000%
+    \sfcode`\.\@m
 }{\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}\endlist}
 
 
@@ -664,16 +644,16 @@
 % achievements
 \newenvironment{achievements}
 {
-	\ifodd
-		\c@page
-	\else
-		\clearpage
-		\phantom{s}
-		\thispagestyle{empty}
-	\fi
-	\chapter*{\dlut@label@zh@achievements}
-	\addcontentsline{toc}{chapter}{\dlut@label@zh@achievements}
-	\addcontentsline{toe}{chapter}{\dlut@label@en@achievements}
+    \ifodd
+        \c@page
+    \else
+        \clearpage
+        \phantom{s}
+        \thispagestyle{empty}
+    \fi
+    \chapter*{\dlut@label@zh@achievements}
+    \addcontentsline{toc}{chapter}{\dlut@label@zh@achievements}
+    \addcontentsline{toe}{chapter}{\dlut@label@en@achievements}
 }{}
 
 
@@ -681,16 +661,16 @@
 % acknowledgements
 \newenvironment{acknowledgements}
 {
-	\ifodd
-		\c@page
-	\else
-		\clearpage
-		\phantom{s}
-		\thispagestyle{empty}
-	\fi
-	\chapter*{\dlut@label@zh@acknowledgements}
-	\addcontentsline{toc}{chapter}{\dlut@label@zh@acknowledgements}
-	\addcontentsline{toe}{chapter}{\dlut@label@en@acknowledgements}
+    \ifodd
+        \c@page
+    \else
+        \clearpage
+        \phantom{s}
+        \thispagestyle{empty}
+    \fi
+    \chapter*{\dlut@label@zh@acknowledgements}
+    \addcontentsline{toc}{chapter}{\dlut@label@zh@acknowledgements}
+    \addcontentsline{toe}{chapter}{\dlut@label@en@acknowledgements}
 }{}
 
 
