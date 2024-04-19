@@ -16,6 +16,7 @@
 \RequirePackage{siunitx}
 \RequirePackage{pdfpages}
 \RequirePackage{notoccite}
+\RequirePackage{tikz}
 \RequirePackage{ifthen}
 \RequirePackage{ifpdf}
 
@@ -389,9 +390,11 @@
 
 \RequirePackage{xltxtra}
 \RequirePackage{graphicx}
-\RequirePackage{subcaption}
 \RequirePackage{makecell}
 \RequirePackage{wrapfig}
+
+\RequirePackage[labelformat=simple]{subcaption}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
@@ -456,6 +459,7 @@
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \renewcommand\thealgorithm{\thechapter.\arabic{algorithm}}
+\floatname{algorithm}{算法}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
@@ -591,10 +595,12 @@
 
 %-----------------------------------------------------------------------------------------------------------------------
 % abstract and keywords in Chinese
-\newenvironment{abstract}{
+\newenvironment{abstract}
+{
 	\cleardoublepage
 	\chapter{\dlut@label@zh@abstract}
-}{}
+}
+{}
 
 \newcommand\beginatevenpage{
 	\clearpage
@@ -604,17 +610,21 @@
 	\fi
 }
 
-\newcommand\keywords[1]{\vspace{2ex}\indent{\heiti\zihao{-4} \dlut@label@zh@keywords} #1}
+\newcommand\keywords[1]{%
+	\vspace{2ex}\indent{\heiti\zihao{-4} \dlut@label@zh@keywords} #1}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
 % abstract and keywords in English
-\newenvironment{englishabstract}{
+\newenvironment{englishabstract}
+{
 	\clearpage
 	\chapter{\dlut@label@en@abstract}
-}{}
+}
+{}
 
-\newcommand\englishkeywords[1]{\vspace{2ex}\indent{\bf\zihao{-4} \dlut@label@en@keywords} #1}
+\newcommand\englishkeywords[1]{%
+	\vspace{2ex}\indent{\bf\zihao{-4} \dlut@label@en@keywords} #1}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
