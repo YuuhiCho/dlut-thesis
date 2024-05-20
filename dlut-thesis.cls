@@ -182,7 +182,7 @@
     right=2.5cm,
     headsep=1.2cm,
     headheight=0.5cm,
-    footskip=1.45cm,
+    footskip=1.65cm,
 ]{geometry}
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
@@ -204,6 +204,8 @@
         beforeskip = 4bp,
         afterskip = 26bp,
         fixskip = true,
+        lofskip = 0pt,
+        lotskip = 0pt,
     },
     section={
         format = {\heiti\zihao{4}},
@@ -221,8 +223,8 @@
         name = {(,)},
         number = {\arabic{subsubsection}},
         format = {\raggedright\heiti\zihao{-4}},
-        beforeskip = 6bp,
-        afterskip = 6bp,
+        beforeskip = 12bp,
+        afterskip = 12bp,
         fixskip = true,
     }%
 }
@@ -416,6 +418,8 @@
 
 \DeclareGraphicsExtensions{.pdf,.eps,.png,.jpg,.jpeg}
 
+\setlength{\intextsep}{12pt}
+\setlength{\textfloatsep}{12pt}
 
 %-----------------------------------------------------------------------------------------------------------------------
 \renewcommand{\textfraction}{0.15}
@@ -474,7 +478,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{supertabular}
 
-\setenumerate[1]{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
+\setenumerate[1]{label=\arabic*), itemindent=1em, itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=0pt}
 
 
 %-----------------------------------------------------------------------------------------------------------------------
@@ -505,6 +509,7 @@
         \parbox[t][4.40cm][c]{\textwidth}
         {
             \begin{center}
+                \vspace{3.5cm}
                 {\songti\zihao{-1}\textbf{\dlut@value@zh@thesistype}\\}
                 \vspace{1.34cm}
                 {\xihei\zihao{2}\textbf{\dlut@value@zh@title}\\}
@@ -512,7 +517,7 @@
                 {\zihao{3}\textbf{\dlut@value@en@title}\\}
             \end{center}
         }
-        \vspace{50.2mm}\\
+        \vspace{8.1cm}\\
         {\songti\zihao{-3}\dlut@key@zh@author}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@author}
             \vskip 10pt
         {\songti\zihao{-3}\dlut@key@zh@authorid}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@authorid}
@@ -522,9 +527,10 @@
         {\songti\zihao{-3}\dlut@key@zh@major}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@major}
             \vskip 10pt
         {\songti\zihao{-3}\dlut@key@zh@defenddate}\dlutunderline[170pt]{\songti\zihao{-3}\dlut@value@zh@defenddate}
-        \\ \vspace{31.4mm}
+            \\
+        \vspace{1.8cm}
         {\Large\xingkai\dlut@value@zh@schoolname\\}
-            \vspace{2.3mm}
+        \vspace{2.3mm}
         {\zihao{-4}\dlut@value@en@schoolname}
     \end{center}
     \vskip \stretch{0.5}
